@@ -4847,20 +4847,25 @@ a img {
 #particles-js .particles-js-canvas-el {
   width: 100% !important;
   height: 100vh !important;
+  position: absolute;
 }
 
 .header {
   z-index: 1;
   text-align: center;
   color: #fff;
-  position: absolute;
+  /* position: absolute; */
   font-family: "Rubik", sans-serif;
-  /* width: 80%; */
-  top: 50%;
-  left: 50%;
   margin: 0 auto;
+  min-height: 98%;
+  /* top: 50%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 20%;
 }
 
 .header .site-name {
@@ -4871,7 +4876,7 @@ a img {
 }
 
 .header .site-title {
-  font-size: 14px;
+  font-size: 20px;
   /* display: block; */
   line-height: 1;
   color: #fff;
@@ -4879,7 +4884,7 @@ a img {
 }
 
 .header .site-description {
-  font-size: 20px;
+  font-size: 17px;
   display: block;
   line-height: 1;
   color: #fff;
@@ -4890,91 +4895,7 @@ a img {
 
 .header .site-description strong {
   color: inherit;
-  font-size: 20ppx;
-}
-
-@media only screen and (min-width: 550px) {
-  .header .site-name {
-    margin: 0;
-    font-size: 100px;
-  }
-
-  .header .site-title {
-    font-size: 24px;
-  }
-
-  .header .site-description {
-    font-size: 18px;
-    line-height: 26px;
-    word-spacing: 8px;
-  }
-
-  .header .site-description strong {
-    color: inherit;
-    font-size: 22ppx;
-  }
-
-  .header-links .link {
-    font-size: 20px;
-  }
-
-  .header-icons .icon {
-    width: 35px;
-    height: 35px;
-    font-size: 35px;
-  }
-
-  #skills {
-    width: 80%;
-  }
-
-  .user {
-    flex-wrap: nowrap;
-    font-size: 75px;
-  }
-
-  #projects {
-    width: 80%;
-  }
-
-  .contents {
-    margin-left: 0;
-    width: 48%;
-  }
-
-  .contents,
-  .contents-right {
-    margin-top: -5%;
-  }
-
-  .contents-right,
-  .images-right {
-    float: right;
-    width: 48%;
-  }
-
-  .contents > div,
-  .contents-right > div {
-    display: flex;
-    gap: 5%;
-    justify-content: center;
-  }
-  .contents-right > div > i,
-  .contents > div > i {
-    font-size: 32px;
-  }
-  .images-right img {
-    float: right;
-  }
-
-  .images-left {
-    float: left;
-    width: 48%;
-  }
-
-  .images-left img {
-    float: left;
-  }
+  font-size: 18px;
 }
 
 .header .contact-container {
@@ -4986,7 +4907,7 @@ a img {
   color: #fff;
   /* padding-top: 3rem; */
   margin-bottom: 3rem;
-  font-size: 32px;
+  font-size: 26px;
 }
 
 .contact-container .left-contact {
@@ -4999,7 +4920,7 @@ a img {
 .contact-content-con .left-contact h4 {
   color: #fff;
   margin-top: 16px;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: bold;
   text-transform: uppercase;
   margin: 10px 0px 10px 30px;
@@ -5024,6 +4945,10 @@ a img {
   font-size: 22px;
 }
 
+.contact-content-con .left-contact .contact-info .contact-item .icon span {
+  padding-right: 0.5vw;
+}
+
 .contact-content-con .left-contact .contact-info .contact-item p {
   margin: 0.3rem 0 !important;
   padding: 0 !important;
@@ -5036,7 +4961,7 @@ a img {
 .header-links .link {
   color: #fff;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 18px;
   margin: 10px;
 }
 
@@ -5044,6 +4969,16 @@ a img {
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.8),
     0 0 20px rgba(255, 255, 255, 0.6), 0 0 5px rgba(255, 255, 255, 0.4);
   transform: scale(1.1); /* Optional: slightly grow the button on hover */
+}
+
+.images-left,
+.images-right {
+  flex: 0.45;
+}
+
+.contents-right,
+.contents {
+  flex: 0.55;
 }
 
 .header-icons {
@@ -5078,30 +5013,24 @@ a img {
 .down {
   position: absolute;
   bottom: 25px;
-  width: 100%;
+  left: 50%;
   margin: 0 auto;
   display: block;
   font-size: 30px;
   cursor: pointer;
-}
-
-.down .icon {
-  position: absolute;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  top: 50%;
-  left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100px;
-  height: 100px;
+  height: 40px;
   fill: #fff;
   -webkit-animation: pulse 1.3s infinite;
   animation: pulse 1.3s infinite;
 }
 
-.down .icon:active,
-.down .icon:hover,
+.down:active,
+.down:hover,
 .footer a:active,
 .footer a:hover {
   color: #4b5664;
@@ -5116,17 +5045,34 @@ a img {
 .tech {
   margin: 10px;
   flex: 1 1 22%;
-  min-width: 180px;
-  max-width: 250px;
+  min-width: 215px;
+  max-width: 300px;
+}
+
+.tech > i {
+  font-size: 45px;
 }
 
 .user {
   text-align: center;
   font-size: 60px;
+  margin: 0 3%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 750px) {
+  * {
+    zoom: 0.98;
+  }
+}
+
+.contents > div > i,
+.contents-right > div > i {
+  font-size: 32px;
+  margin: 0 10px;
 }
 
 .user p {
@@ -5326,4 +5272,224 @@ ul {
   text-decoration: none;
   margin: 0;
   color: #fff;
+}
+
+@media only screen and (min-width: 1200px) {
+  .header .site-name {
+    margin: 0;
+    font-size: calc(60px + 1vw);
+  }
+
+  .header .site-title {
+    font-size: calc(18px + 0.5vw);
+  }
+
+  .header .site-description {
+    font-size: calc(12px + 0.5vw);
+    line-height: calc(15px + 0.8vw);
+    word-spacing: 6px;
+  }
+
+  .header .site-description strong {
+    color: inherit;
+    font-size: calc(13px + 0.5vw);
+  }
+
+  .contact-content-con .left-contact h4 {
+    color: #fff;
+    margin-top: 16px;
+    font-size: calc(22px + 0.5vw);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px 0px 10px 30px;
+  }
+
+  .contact-content-con .left-contact .contact-info .contact-item {
+    display: flex;
+    align-items: center;
+    /* margin: 5px 0px; */
+    font-size: calc(15px + 0.2vw);
+  }
+
+  .header-links .link {
+    font-size: calc(14px + 0.5vw);
+  }
+
+  .tech > i {
+    font-size: calc(45px + 1vw);
+  }
+
+  .header-icons .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 35px;
+  }
+
+  #skills {
+    width: 80%;
+  }
+
+  .user {
+    flex-wrap: nowrap;
+    font-size: 75px;
+  }
+
+  #projects {
+    width: 80%;
+  }
+
+  .contents {
+    margin-left: 0;
+    width: 48%;
+  }
+
+  .contents,
+  .contents-right {
+    margin-top: -5%;
+  }
+
+  .contents-right,
+  .images-right {
+    float: right;
+    width: 48%;
+  }
+
+  .contents > div,
+  .contents-right > div {
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+  }
+  .contents-right > div > i,
+  .contents > div > i {
+    font-size: 32px;
+  }
+  .images-right img {
+    float: right;
+  }
+
+  .images-left {
+    float: left;
+    width: 48%;
+  }
+
+  .images-left img {
+    float: left;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 1200px) {
+  .header .site-name {
+    margin: 0;
+    font-size: calc(50px + 1vw);
+  }
+
+  .header .site-title {
+    font-size: calc(16px + 0.4vw);
+  }
+
+  .header .site-description {
+    font-size: calc(13px + 0.3vw);
+    line-height: calc(16px + 0.5vw);
+    word-spacing: 6px;
+  }
+
+  .header .site-description strong {
+    color: inherit;
+    font-size: calc(13px + 0.4vw);
+  }
+
+  .contact-content-con .left-contact h4 {
+    color: #fff;
+    margin-top: 16px;
+    font-size: calc(20px + 0.4vw);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px 0px 10px 30px;
+  }
+
+  .contact-content-con .left-contact .contact-info .contact-item {
+    display: flex;
+    align-items: center;
+    /* margin: 5px 0px; */
+    font-size: calc(14px + 0.1vw);
+  }
+
+  .contact-content-con .left-contact .contact-info .contact-item .icon i {
+    font-size: calc(18px + 0.3vw);
+  }
+
+  .header-links .link {
+    font-size: calc(14px + 0.5vw);
+  }
+
+  .tech > i {
+    font-size: calc(40px + 1vw);
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 1200px) {
+  .header-icons .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 35px;
+  }
+
+  #skills {
+    width: 80%;
+  }
+
+  .user {
+    flex-wrap: wrap;
+    font-size: 75px;
+    justify-content: space-around;
+    margin: 0 10%;
+  }
+
+  .user .tech {
+    min-width: 35%;
+  }
+
+  #projects {
+    width: 80%;
+  }
+
+  .contents {
+    margin-left: 0;
+    width: 48%;
+  }
+
+  .contents,
+  .contents-right {
+    margin-top: -5%;
+  }
+
+  .contents-right,
+  .images-right {
+    float: right;
+    width: 48%;
+  }
+
+  .contents > div,
+  .contents-right > div {
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+  }
+  .contents-right > div > i,
+  .contents > div > i {
+    font-size: 32px;
+  }
+  .images-right img {
+    float: right;
+  }
+
+  .images-left {
+    float: left;
+    width: 48%;
+  }
+
+  .images-left img {
+    float: left;
+  }
 }
